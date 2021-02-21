@@ -1,0 +1,9 @@
+<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+    <ngb-panel title="{{product.name}}" *ngFor="let product of productList">
+    <ng-template ngbPanelContent>
+        <div>Description: {{product.description}} </div>
+        <div>Price: {{product.price}}</div>
+        <div><img src="{{product.image}}" /></div>
+    </ng-template>
+</ngb-panel>
+</ngb-accordion>
