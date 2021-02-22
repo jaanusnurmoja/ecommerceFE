@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
+import {isModuleMetadata} from "@angular/compiler-cli";
 
 @Component({
   selector: 'app-product-list',
@@ -8,13 +9,15 @@ import { HttpService } from '../http.service';
 })
 export class ProductListComponent implements OnInit {
 
-  productList = {}
+  productList:any
   constructor(private httpService: HttpService) { }
 
 
   ngOnInit(): void {
     this.httpService.getProducts()
-      .subscribe( data => this.productList = data )
+      .subscribe(
+        data => this.productList = data
+    )
   }
 
 }
